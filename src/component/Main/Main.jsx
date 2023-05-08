@@ -1,0 +1,19 @@
+import React from "react";
+import Navbar from "../Navbar/Navbar";
+import Slider from "../Slider/Slider";
+import NavigateButtons from "../NavigateButtons/NavigateButtons";
+import ProductSection from "../ProductSection/ProductSection.js";
+import Footer from "../Footer/Footer";
+const Main = () => {
+  return (
+    <>
+      <Navbar></Navbar>
+      <Slider></Slider>
+      <NavigateButtons></NavigateButtons>
+      <ProductSection></ProductSection>
+      <Footer></Footer>
+    </>
+  );
+};
+
+export default Main;
