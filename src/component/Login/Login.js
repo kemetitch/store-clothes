@@ -35,17 +35,17 @@ const Login = () => {
         </CardHeader>
         <CardBody className="flex flex-col gap-4">
           <Input
-            label="Name"
+            label="kareem"
             size="lg"
             name="name"
             onChange={handler}
             value={values.name}
           />
           <Input
-            label="Password"
+            label="2581463"
             size="lg"
-            type="password"
             name="password"
+            type="password"
             onChange={handler}
             value={values.password}
           />
