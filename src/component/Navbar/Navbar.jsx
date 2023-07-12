@@ -1,42 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import Cart from "../Cart/Cart";
-import { useDispatch } from "react-redux";
-import { logout } from "../../features/slices/loginSlice";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 const Navbar = () => {
-  const param = useParams();
-
-  let showLogout = Object.keys(param).length;
-  console.log(showLogout);
-
-  if (showLogout === 0) {
-    showLogout = true;
-  } else {
-    showLogout = false;
-  }
   const [open, setOpen] = useState(false);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
-  const emailName = useSelector((state) => state.login.user.name);
   const handleOpen = () => {
     setOpen(true);
   };
-  const dispatch = useDispatch();
   return (
     <div className="bg-black text-white">
       <div className="flex py-5  container mx-auto flex-col md:flex-row justify-between items-center">
         <div className="font-inter">Kemetitch Store</div>
         <div className="flex py-3 md:py-0 flex-row  justify-cetner items-center">
-          {showLogout && (
-            <button
-              onClick={() => dispatch(logout())}
-              className="font-inter text-base font-medium  tracking-normal leading-none text-center mr-4"
-            >
-              logout
-            </button>
-          )}
-
           <div
             className="flex flex-row items-center cursor-pointer"
             onClick={handleOpen}
@@ -69,7 +45,6 @@ const Navbar = () => {
               {open && <Cart openModal={open} setOpen={setOpen}></Cart>}
             </div>
           </div>
-          <div className="font-bold">hi ({emailName})</div>
         </div>
       </div>
     </div>
